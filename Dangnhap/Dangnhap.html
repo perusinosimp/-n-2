@@ -1,16 +1,53 @@
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đăng nhập - Quản lý Nông sản</title>
+    <link rel="stylesheet" href="Dangnhap.css">
 </head>
 <body>
-    <h1>Đăng nhập</h1>
-    <form action="">
-        <label for="username">Tên đăng nhập:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Mật khẩu:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Đăng nhập">
-    </form>
+    <div class="auth-container">
+        <div class="auth-header">
+            <i class="fas fa-seedling"></i>
+            <h2>Đăng nhập</h2>
+            <p>Hệ thống Quản lý Nông sản & Chuỗi cung ứng</p>
+        </div>
+        <div class="auth-body">
+            <div id="loginAlert" class="alert"></div>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Email hoặc Tên đăng nhập</label>
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" class="form-control" id="loginUsername" placeholder="Nhập email hoặc tên đăng nhập" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Ghi nhớ đăng nhập</label>
+                    </div>
+                    <a href="Quenmatkhau.html" class="forgot-link">Quên mật khẩu?</a>
+                </div>                
+                <button type="submit" class="btn">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Đăng nhập
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                Chưa có tài khoản? <a href="Dangkytaikhoan.html">Đăng ký ngay</a>
+            </div>           
+        </div>
+    </div>
 </body>

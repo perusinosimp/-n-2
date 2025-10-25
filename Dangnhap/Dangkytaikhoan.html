@@ -1,0 +1,329 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản - Quản lý Nông sản</title>
+    <link rel="stylesheet" href="Dangkytaikhoan.css">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-header">
+            <i class="fas fa-user-plus"></i>
+            <h2>Đăng ký tài khoản</h2>
+            <p>Hệ thống Quản lý Nông sản & Chuỗi cung ứng</p>
+        </div>
+        <div class="register-body">
+            <div id="registerAlert" class="alert"></div>
+            <form id="registerForm">
+                <div class="role-selection">
+                    <h3><i class="fas fa-user-tag"></i> Chọn vai trò của bạn</h3>
+                    <div class="role-grid">
+                        <div class="role-card" data-role="farmer">
+                            <i class="fas fa-tractor"></i>
+                            <h4>Nông dân</h4>
+                            <p>Đăng ký lô nông sản, quản lý trang trại</p>
+                        </div>
+                        <div class="role-card" data-role="distributor">
+                            <i class="fas fa-truck"></i>
+                            <h4>Đại lý</h4>
+                            <p>Vận chuyển, phân phối nông sản</p>
+                        </div>
+                        <div class="role-card" data-role="retailer">
+                            <i class="fas fa-store"></i>
+                            <h4>Siêu thị</h4>
+                            <p>Bán lẻ, kinh doanh nông sản</p>
+                        </div>
+                    </div>
+                    <input type="hidden" id="userRole" name="role" required>
+                </div>
+
+                <!-- Thông tin cá nhân -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Họ và tên <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" class="form-control" id="phone" placeholder="Nhập số điện thoại" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email <span class="required">*</span></label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" class="form-control" id="email" placeholder="Nhập địa chỉ email" required>
+                    </div>
+                </div>
+
+                <!-- Thông tin đăng nhập -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Mật khẩu <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" class="form-control" id="password" placeholder="Tạo mật khẩu" required>
+                        </div>
+                        <div class="password-strength">
+                            <div class="password-strength-bar" id="passwordStrength"></div>
+                        </div>
+                        <div class="password-hint">Ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường và số</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Xác nhận mật khẩu <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Địa chỉ -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tỉnh/Thành phố <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select class="form-control" id="province" required>
+                                <option value="">Chọn Tỉnh/Thành phố</option>
+                                <option value="An Giang">An Giang</option>
+                                <option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option>
+                                <option value="Bắc Giang">Bắc Giang</option>
+                                <option value="Bắc Kạn">Bắc Kạn</option>
+                                <option value="Bạc Liêu">Bạc Liêu</option>
+                                <option value="Bắc Ninh">Bắc Ninh</option>
+                                <option value="Bến Tre">Bến Tre</option>
+                                <option value="Bình Định">Bình Định</option>
+                                <option value="Bình Dương">Bình Dương</option>
+                                <option value="Bình Phước">Bình Phước</option>
+                                <option value="Bình Thuận">Bình Thuận</option>
+                                <option value="Cà Mau">Cà Mau</option>
+                                <option value="Cần Thơ">Cần Thơ</option>
+                                <option value="Cao Bằng">Cao Bằng</option>
+                                <option value="Đà Nẵng">Đà Nẵng</option>
+                                <option value="Đắk Lắk">Đắk Lắk</option>
+                                <option value="Đắk Nông">Đắk Nông</option>
+                                <option value="Điện Biên">Điện Biên</option>
+                                <option value="Đồng Nai">Đồng Nai</option>
+                                <option value="Đồng Tháp">Đồng Tháp</option>
+                                <option value="Gia Lai">Gia Lai</option>
+                                <option value="Hà Giang">Hà Giang</option>
+                                <option value="Hà Nam">Hà Nam</option>
+                                <option value="Hà Nội">Hà Nội</option>
+                                <option value="Hà Tĩnh">Hà Tĩnh</option>
+                                <option value="Hải Dương">Hải Dương</option>
+                                <option value="Hải Phòng">Hải Phòng</option>
+                                <option value="Hậu Giang">Hậu Giang</option>
+                                <option value="Hòa Bình">Hòa Bình</option>
+                                <option value="Hưng Yên">Hưng Yên</option>
+                                <option value="Khánh Hòa">Khánh Hòa</option>
+                                <option value="Kiên Giang">Kiên Giang</option>
+                                <option value="Kon Tum">Kon Tum</option>
+                                <option value="Lai Châu">Lai Châu</option>
+                                <option value="Lâm Đồng">Lâm Đồng</option>
+                                <option value="Lạng Sơn">Lạng Sơn</option>
+                                <option value="Lào Cai">Lào Cai</option>
+                                <option value="Long An">Long An</option>
+                                <option value="Nam Định">Nam Định</option>
+                                <option value="Nghệ An">Nghệ An</option>
+                                <option value="Ninh Bình">Ninh Bình</option>
+                                <option value="Ninh Thuận">Ninh Thuận</option>
+                                <option value="Phú Thọ">Phú Thọ</option>
+                                <option value="Phú Yên">Phú Yên</option>
+                                <option value="Quảng Bình">Quảng Bình</option>
+                                <option value="Quảng Nam">Quảng Nam</option>
+                                <option value="Quảng Ngãi">Quảng Ngãi</option>
+                                <option value="Quảng Ninh">Quảng Ninh</option>
+                                <option value="Quảng Trị">Quảng Trị</option>
+                                <option value="Sóc Trăng">Sóc Trăng</option>
+                                <option value="Sơn La">Sơn La</option>
+                                <option value="Tây Ninh">Tây Ninh</option>
+                                <option value="Thái Bình">Thái Bình</option>
+                                <option value="Thái Nguyên">Thái Nguyên</option>
+                                <option value="Thanh Hóa">Thanh Hóa</option>
+                                <option value="Thừa Thiên Huế">Thừa Thiên Huế</option>
+                                <option value="Tiền Giang">Tiền Giang</option>
+                                <option value="TP. Hồ Chí Minh">TP. Hồ Chí Minh</option>
+                                <option value="Trà Vinh">Trà Vinh</option>
+                                <option value="Tuyên Quang">Tuyên Quang</option>
+                                <option value="Vĩnh Long">Vĩnh Long</option>
+                                <option value="Vĩnh Phúc">Vĩnh Phúc</option>
+                                <option value="Yên Bái">Yên Bái</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Quận/Huyện <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <input type="text" class="form-control" id="district" placeholder="Nhập Quận/Huyện" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Địa chỉ chi tiết <span class="required">*</span></label>
+                    <div class="input-group">
+                        <i class="fas fa-home"></i>
+                        <input type="text" class="form-control" id="address" placeholder="Số nhà, tên đường, phường/xã" required>
+                    </div>
+                </div>
+
+                <!-- Thông tin riêng cho Nông dân -->
+                <div id="farmerFields" class="role-specific-fields">
+                    <h3 style="margin: 20px 0 15px; color: #333; font-size: 16px;">
+                        <i class="fas fa-tractor"></i> Thông tin trang trại
+                    </h3>
+                    <div class="form-group">
+                        <label>Tên trang trại <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-seedling"></i>
+                            <input type="text" class="form-control" id="farmName" placeholder="Nhập tên trang trại">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Diện tích canh tác (ha) <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-ruler-combined"></i>
+                                <input type="number" class="form-control" id="farmArea" placeholder="Nhập diện tích" step="0.1" min="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại nông sản chính <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-carrot"></i>
+                                <select class="form-control" id="cropType">
+                                    <option value="">Chọn loại nông sản</option>
+                                    <option value="Rau củ">Rau củ</option>
+                                    <option value="Trái cây">Trái cây</option>
+                                    <option value="Ngũ cốc">Ngũ cốc</option>
+                                    <option value="Cây công nghiệp">Cây công nghiệp</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Chứng nhận (nếu có)</label>
+                        <div class="input-group">
+                            <i class="fas fa-certificate"></i>
+                            <select class="form-control" id="certification">
+                                <option value="">Chọn chứng nhận</option>
+                                <option value="VietGAP">VietGAP</option>
+                                <option value="GlobalGAP">GlobalGAP</option>
+                                <option value="Organic">Organic</option>
+                                <option value="Khác">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin riêng cho Đại lý -->
+                <div id="distributorFields" class="role-specific-fields">
+                    <h3 style="margin: 20px 0 15px; color: #333; font-size: 16px;">
+                        <i class="fas fa-truck"></i> Thông tin đại lý
+                    </h3>
+                    <div class="form-group">
+                        <label>Tên công ty/Đại lý <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-building"></i>
+                            <input type="text" class="form-control" id="companyName" placeholder="Nhập tên công ty/đại lý">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Mã số thuế</label>
+                            <div class="input-group">
+                                <i class="fas fa-file-invoice"></i>
+                                <input type="text" class="form-control" id="taxCode" placeholder="Nhập mã số thuế">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Số xe vận chuyển</label>
+                            <div class="input-group">
+                                <i class="fas fa-truck-moving"></i>
+                                <input type="number" class="form-control" id="vehicleCount" placeholder="Số lượng xe" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Khu vực hoạt động <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-map"></i>
+                            <textarea class="form-control" id="serviceArea" placeholder="Nhập các tỉnh/thành phố hoạt động (cách nhau bằng dấu phẩy)" style="padding-left: 45px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thông tin riêng cho Siêu thị -->
+                <div id="retailerFields" class="role-specific-fields">
+                    <h3 style="margin: 20px 0 15px; color: #333; font-size: 16px;">
+                        <i class="fas fa-store"></i> Thông tin siêu thị
+                    </h3>
+                    <div class="form-group">
+                        <label>Tên cửa hàng/Siêu thị <span class="required">*</span></label>
+                        <div class="input-group">
+                            <i class="fas fa-store-alt"></i>
+                            <input type="text" class="form-control" id="storeName" placeholder="Nhập tên cửa hàng/siêu thị">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Loại hình kinh doanh <span class="required">*</span></label>
+                            <div class="input-group">
+                                <i class="fas fa-shopping-cart"></i>
+                                <select class="form-control" id="businessType">
+                                    <option value="">Chọn loại hình</option>
+                                    <option value="Siêu thị">Siêu thị</option>
+                                    <option value="Cửa hàng tiện lợi">Cửa hàng tiện lợi</option>
+                                    <option value="Chợ truyền thống">Chợ truyền thống</option>
+                                    <option value="Cửa hàng thực phẩm sạch">Cửa hàng thực phẩm sạch</option>
+                                    <option value="Khác">Khác</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Giấy phép kinh doanh</label>
+                            <div class="input-group">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" class="form-control" id="businessLicense" placeholder="Số giấy phép">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Quy mô cửa hàng (m²)</label>
+                        <div class="input-group">
+                            <i class="fas fa-expand"></i>
+                            <input type="number" class="form-control" id="storeSize" placeholder="Diện tích cửa hàng" min="0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Điều khoản -->
+                <div class="checkbox-group">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">
+                        Tôi đồng ý với <a href="#" target="_blank">Điều khoản sử dụng</a> và <a href="#" target="_blank">Chính sách bảo mật</a> của hệ thống
+                    </label>
+                </div>
+
+                <!-- Nút đăng ký -->
+                <button type="submit" class="btn btn-primary" id="submitBtn">
+                    <i class="fas fa-user-check"></i>
+                    Đăng ký tài khoản
+                </button>
+            </form>
+
+            <div class="register-footer">
+                Đã có tài khoản? <a href="Dangnhap.html">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+</body>
