@@ -1,4 +1,4 @@
-        body {
+body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #33FF33 0%, #33CC33 100%);
             min-height: 100vh;
@@ -230,6 +230,11 @@
 
         .auth-footer a:hover {
             text-decoration: underline;
+        }
+
+        .auth-footer .divider {
+            margin: 0 10px;
+            color: #e0e0e0;
         }
 
         .demo-info {

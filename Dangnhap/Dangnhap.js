@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Check if account exists and credentials match
-        const userExists = accounts[accountType].find(
+        const storedAccounts = JSON.parse(localStorage.getItem('testAccounts') || '[]');
+        const userExists = [...accounts[accountType], ...storedAccounts].find(
             acc => acc.username === username && acc.password === password
         );
 
