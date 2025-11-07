@@ -11,7 +11,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         .navbar {
             position: fixed;
             top: 0;
@@ -53,6 +52,41 @@
 
         .logo i {
             font-size: 32px;
+        }
+
+        .icon-img {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        .feature-img {
+            width: 42px;
+            height: 42px;
+        }
+
+        .role-img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .inline-icon {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            filter: invert(1); 
         }
 
         .nav-menu {
@@ -170,7 +204,6 @@
             }
         }
 
-        /* Features Section */
         .features {
             padding: 80px 20px;
             background: #f8f9fa;
@@ -188,13 +221,24 @@
 
         .section-header h2 {
             font-size: 38px;
-            color: #333;
+            color: #181818;
             margin-bottom: 15px;
         }
 
         .section-header p {
             font-size: 18px;
-            color: #666;
+            color: #181818;
+        }
+        
+        .how-it-works .section-header h2{
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .how-it-works .section-header p {
+            font-size: 18px;
+            color: #ffffff;
         }
 
         .features-grid {
@@ -216,7 +260,7 @@
             transform: translateY(-10px);
             box-shadow: 0 15px 40px rgba(0,0,0,0.15);
         }
-
+               
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -229,6 +273,8 @@
             font-size: 35px;
             color: white;
         }
+
+        .fas fa-clipboard-check
 
         .feature-card h3 {
             font-size: 22px;
@@ -393,6 +439,12 @@
             line-height: 1.7;
         }
 
+        .benefit-img {
+            width: 32px;
+            height: 32px;
+            filter: brightness(0) invert(1); /* Để icon hiển thị màu trắng */
+        }
+
         /* CTA Section */
         .cta {
             padding: 100px 20px;
@@ -482,20 +534,31 @@
         .social-links a {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.25s;
         }
 
-        .social-links a:hover {
-            background: #33FF33;
-            transform: translateY(-3px);
+        .social-links a.fb:hover { background: #1877F2; transform: translateY(-3px); }      /* Facebook */
+        .social-links a.x:hover  { background: #1DA1F2; transform: translateY(-3px); }      /* X / Twitter */
+        .social-links a.in:hover { background: #0A66C2; transform: translateY(-3px); }      /* LinkedIn */
+        .social-links a.youtube:hover { background: #FF0000; transform: translateY(-3px); } /* YouTube */
+
+        .social-img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+            transition: filter 0.25s;
         }
+
+        /* if you use colored PNGs/SVGs and want them unchanged on hover, remove filter on :hover:
+        .social-links a:hover .social-img { filter: none; }
+        */
 
         .footer-bottom {
             text-align: center;
